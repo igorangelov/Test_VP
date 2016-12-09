@@ -105,26 +105,7 @@ class ServicesManager {
         
         ServicesManager.get(url: UrlHelper.urlGetUserList(), callback: callback)
     }
-    
-    
-    //***************************
-    //get Album list for API
-    //***************************
-    class func getUserAlbums(userId: Int, callback: @escaping ResultResponseManager) {
         
-        ServicesManager.get(url: UrlHelper.urlGetUserAlbums(id: userId), callback: callback)
-       
-    }
-    
-    //***************************
-    //get Photo list for API
-    //***************************
-    class func getAlbumPhotos(albumId: Int, callback: @escaping ResultResponseManager) {
-        
-        ServicesManager.get(url: UrlHelper.urlGetAlbumPhotos(id: albumId), callback: callback)
-    
-    }
-    
     
     
     //***************************

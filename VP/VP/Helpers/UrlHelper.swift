@@ -15,30 +15,27 @@ class UrlHelper {
     
     class func baseURL()->String
     {
-        return "http://api.openweathermap.org/data/" + UrlHelper.apiVersion()
+        return "http://api.openweathermap.org/data/" + self.apiVersion()
     }
     
     class func apiVersion()->String
     {
         return "2.5"
     }
+    
+    class func apiToken () -> String
+    {
+        return "&appid=a6587419bdbd54104a0e366c646fadb5"
+    }
    
-    // MAKR: - USER
+    // MAKR: - meteo
 
     class func urlGetUserList()->String
     {
-        return "\(UrlHelper.getBaseURL())/users"
+        return "\(self.baseURL())/forecast?q=paris,fr&mode=json" + self.apiVersion()
     }
 
-    class func urlGetUserAlbums(id:Int)->String
-    {
-        return "\(UrlHelper.getBaseURL())/users/\(id)/albums"
-    }
-    
-    class func urlGetAlbumPhotos(id:Int)->String
-    {
-        return "\(UrlHelper.getBaseURL())/albums/\(id)/photos"
-    }
+   
 
     
 }

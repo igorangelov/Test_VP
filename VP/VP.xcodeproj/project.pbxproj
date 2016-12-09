@@ -21,9 +21,9 @@
 		529E0B881DFADD7B0097A9BE /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529E0B801DFADD7B0097A9BE /* UIImageViewExtension.swift */; };
 		529E0B891DFADD7B0097A9BE /* UrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529E0B811DFADD7B0097A9BE /* UrlHelper.swift */; };
 		529E0B8A1DFADD7B0097A9BE /* ServicesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529E0B831DFADD7B0097A9BE /* ServicesManager.swift */; };
-		529E0B901DFB47200097A9BE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529E0B8D1DFB47200097A9BE /* Alamofire.framework */; };
-		529E0B911DFB47200097A9BE /* Async.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529E0B8E1DFB47200097A9BE /* Async.framework */; };
-		529E0B921DFB47200097A9BE /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529E0B8F1DFB47200097A9BE /* SwiftyJSON.framework */; };
+		529E0B961DFB4AB90097A9BE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529E0B931DFB4AB90097A9BE /* Alamofire.framework */; };
+		529E0B971DFB4AB90097A9BE /* Async.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529E0B941DFB4AB90097A9BE /* Async.framework */; };
+		529E0B981DFB4AB90097A9BE /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529E0B951DFB4AB90097A9BE /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,9 +64,9 @@
 		529E0B801DFADD7B0097A9BE /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		529E0B811DFADD7B0097A9BE /* UrlHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlHelper.swift; sourceTree = "<group>"; };
 		529E0B831DFADD7B0097A9BE /* ServicesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesManager.swift; sourceTree = "<group>"; };
-		529E0B8D1DFB47200097A9BE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		529E0B8E1DFB47200097A9BE /* Async.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Async.framework; path = ../Carthage/Build/iOS/Async.framework; sourceTree = "<group>"; };
-		529E0B8F1DFB47200097A9BE /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		529E0B931DFB4AB90097A9BE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		529E0B941DFB4AB90097A9BE /* Async.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Async.framework; path = Carthage/Build/iOS/Async.framework; sourceTree = "<group>"; };
+		529E0B951DFB4AB90097A9BE /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,9 +74,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				529E0B901DFB47200097A9BE /* Alamofire.framework in Frameworks */,
-				529E0B911DFB47200097A9BE /* Async.framework in Frameworks */,
-				529E0B921DFB47200097A9BE /* SwiftyJSON.framework in Frameworks */,
+				529E0B961DFB4AB90097A9BE /* Alamofire.framework in Frameworks */,
+				529E0B971DFB4AB90097A9BE /* Async.framework in Frameworks */,
+				529E0B981DFB4AB90097A9BE /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,9 +183,9 @@
 		529E0B8C1DFB471F0097A9BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				529E0B8D1DFB47200097A9BE /* Alamofire.framework */,
-				529E0B8E1DFB47200097A9BE /* Async.framework */,
-				529E0B8F1DFB47200097A9BE /* SwiftyJSON.framework */,
+				529E0B931DFB4AB90097A9BE /* Alamofire.framework */,
+				529E0B941DFB4AB90097A9BE /* Async.framework */,
+				529E0B951DFB4AB90097A9BE /* SwiftyJSON.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -504,6 +504,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = VP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ia.VP;
@@ -516,6 +520,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = VP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ia.VP;
