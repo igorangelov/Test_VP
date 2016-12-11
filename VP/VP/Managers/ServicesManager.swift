@@ -34,6 +34,9 @@ class ServicesManager {
     
     class func get(url : String, cached isCached : Bool = true, callback: @escaping ResultResponseManager)
     {
+        
+        debugPrint(url)
+
         //manager cached data func
         func getCachedData()
         {
@@ -43,7 +46,7 @@ class ServicesManager {
                 if errors == nil {
                     
                     // if can find cached
-                    if let swiftyJsonVar : [Any] = JSON(data: data as! Data).arrayObject {
+                    if let swiftyJsonVar : [String:Any] = JSON(data: data as! Data).dictionaryObject {
                         callback(.None, swiftyJsonVar )
                         return
                     }
@@ -57,9 +60,9 @@ class ServicesManager {
         
         if(Reachability.isConnectedToNetwork() == false){
             getCachedData()
+            return
         }
         
-        debugPrint(url)
         Alamofire.request(url,
                           method: .get,
                           parameters: nil,
@@ -82,7 +85,7 @@ class ServicesManager {
                 {
                     //Verifiy Data
                     if let data = response.data{
-                        let swiftyJsonVar : [Any] = JSON(data: data).arrayObject!
+                        let swiftyJsonVar : [String:Any] = JSON(data: data).dictionaryObject!
                         callback(.None, swiftyJsonVar )
                         //cache Data
                         SupraCacheManager.pushDataToCache(url: url, expiredAt: SupraCacheManager.makeExpiredDayWeek(weekLater: 1), data: data as NSData)
@@ -99,13 +102,13 @@ class ServicesManager {
     }
     
     //***************************
-    //get User list for API
+    //get weather for 5 days for API
     //***************************
-    class func getUsers(callback: @escaping ResultResponseManager) {
+    class func getWeather(callback: @escaping ResultResponseManager) {
         
-        ServicesManager.get(url: UrlHelper.urlGetUserList(), callback: callback)
+        ServicesManager.get(url: UrlHelper.urlGetWeather(), callback: callback)
     }
-        
+    
     
     
     //***************************

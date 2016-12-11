@@ -30,11 +30,15 @@ class UrlHelper {
    
     // MAKR: - meteo
 
-    class func urlGetUserList()->String
+    class func urlGetWeather()->String
     {
-        return "\(self.baseURL())/forecast?q=paris,fr&mode=json" + self.apiVersion()
+        return "\(self.baseURL())/forecast?q=paris,fr&mode=json" + self.localUnitMeasurment() + self.apiToken()
     }
 
+    class func localUnitMeasurment()-> String
+    {
+        return  Locale.current.usesMetricSystem ? "&units=metric" : "&units=imperial"
+    }
    
 
     
