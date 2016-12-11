@@ -25,35 +25,23 @@ class WeatherTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    var dictWeather : [String: Any]?{
+    var weatherModelView : WeatherViewModel?{
         didSet{
-            guard let dict = dictWeather else { return }
+            guard let weatherMV = weatherModelView else { return }
             
-            let date = NSDate(timeIntervalSince1970: (dict["dt"] as? Double)!)
-            let dateFormatter = DateFormatter()
-            dateFormatter.timeStyle = DateFormatter.Style.medium
-            dateFormatter.dateStyle = DateFormatter.Style.medium
-            var localDate = dateFormatter.string(from: date as Date)
-            localDate = localDate.replacingOccurrences(of: ":00 ", with: "  ")
-            
-            let array = dict["weather"] as? [Any]
-            let dictW = array?[0] as? [String:Any]
-            if let iconeName = dictW?["icon"] as? String {
-                let urlImage  = "http://openweathermap.org/img/w/" + iconeName + ".png"
-                self.weatherImageView.downloadedFrom(link: urlImage)
+            if let label = self.weatherLabel {
+                label.text = weatherMV.dateTitle + "\n" + weatherMV.descriptionTitle
             }
             
-            if let desc = dictW?["description"] as? String
-            {
-                    self.weatherLabel.text = localDate + "\n" + desc.capitalized
+            if let label = self.temperaturLabel {
+                label.text = weatherMV.temperaturTitle
             }
             
-            let mainDictionary  = dict["main"] as? [String:Any]
-            if let temp = mainDictionary?["temp"] as? Double {
-                let tempUnit = Locale.current.usesMetricSystem ? "°C" : "°F"
-                self.temperaturLabel.text = String(temp) + tempUnit
+            if let image = self.weatherImageView {
+                image.downloadedFrom(link: weatherMV.imageUrl)
+                
             }
-            
+    
         }
     }
 

@@ -50,12 +50,12 @@
                   moduleName = "VP"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///1NEW/Entretien/Test_VP/VP/VP/Managers/ServicesManager.swift"
-                  timestampString = "503163181.166535"
+                  timestampString = "503177518.388772"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "44"
                   endingLineNumber = "44"
-                  offsetFromSymbolStart = "45">
+                  offsetFromSymbolStart = "34">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -65,12 +65,12 @@
                   moduleName = "VP"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///1NEW/Entretien/Test_VP/VP/VP/Managers/ServicesManager.swift"
-                  timestampString = "503163181.168086"
+                  timestampString = "503177518.390731"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "46"
                   endingLineNumber = "46"
-                  offsetFromSymbolStart = "42">
+                  offsetFromSymbolStart = "28">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -129,14 +129,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VP/Views/WeatherTableViewCell.swift"
-            timestampString = "503163111.127589"
+            filePath = "VPTests/VPTests.swift"
+            timestampString = "503177041.732644"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "WeatherTableViewCell"
-            landmarkType = "3">
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "testWeatherModelView()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VPTests.VPTests.testWeatherModelView () -&gt; ()"
+                  moduleName = "VPTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///1NEW/Entretien/Test_VP/VP/VPTests/VPTests.swift"
+                  timestampString = "503177519.440926"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "66">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VPTests.VPTests.(testWeatherModelView () -&gt; ()).(implicit closure #1)"
+                  moduleName = "VPTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///1NEW/Entretien/Test_VP/VP/VPTests/VPTests.swift"
+                  timestampString = "503177519.442503"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "26">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

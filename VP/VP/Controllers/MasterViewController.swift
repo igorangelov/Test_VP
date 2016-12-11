@@ -50,7 +50,7 @@ class MasterViewController: UITableViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow {
             let object = items[indexPath.row] as? [String:Any]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = object
+                controller.detailItem = WeatherViewModel.init(dictionary: object!)
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
@@ -71,8 +71,7 @@ class MasterViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? WeatherTableViewCell else {
             return UITableViewCell()
         }
-        
-        cell.dictWeather = items[indexPath.row] as? [String:Any]
+        cell.weatherModelView = WeatherViewModel.init(dictionary: (items[indexPath.row] as? [String:Any])!)
         return cell
     }
 
